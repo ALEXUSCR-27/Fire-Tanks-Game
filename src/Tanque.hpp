@@ -11,11 +11,10 @@ class Tanque {
         int aDaño;
         int aPosicion;
     public:
-        Tanque (string nombre,int vida, int daño, int posicion ) {
+        Tanque (string nombre,int vida, int daño) {
             aNombre = nombre;
             aVida = vida;
             aDaño = daño;
-            aPosicion = posicion;
         }
 
         void SetVida(int vida) {

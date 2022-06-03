@@ -5,7 +5,6 @@
 #include "Jugador.hpp"
 using namespace std;
 
-#define DEFAULT_BUFLEN 512
 
 Impresion *gImpresion = new Impresion();
 Jugador *gJugador1 = nullptr;
@@ -20,6 +19,7 @@ void Menu();
 void Menu02();
 void Menu03();
 void Menu03_2();
+void Menu03_3();
 int VerificarNumero();
 
 
@@ -76,12 +76,63 @@ void Menu03() {
 }
 
 void Menu03_2() {
-    int TanqueJ1 = VerificarNumero();
-    //Verificar
-    gImpresion->ImpresionTanques02(gJugador2);
-    int TanqueJ2 = VerificarNumero();
-    system("pause");
+    int TJ1 = VerificarNumero();
+    Tanque *TanqueJ1 = nullptr;
+    switch (TJ1) {
+        case 1:
+            TanqueJ1 = new Tanque("T-28 Super Tank",100,30);
+            gJugador1->SetTanque(TanqueJ1);
+            break;
+        case 2:
+            TanqueJ1 = new Tanque("T-14 Armata",100,60);
+            gJugador1->SetTanque(TanqueJ1);
+            break;
+        case 3:
+            TanqueJ1 = new Tanque("Leopardo II",150,15);
+            gJugador1->SetTanque(TanqueJ1);
+            break;
+        case 4:
+            TanqueJ1 = new Tanque("Black Night",100,25);
+            gJugador1->SetTanque(TanqueJ1);
+            break;
+        default:
+            gImpresion->ImpresionError01();
+            Menu03_2();
+    }
 
+    gImpresion->ImpresionTanques02(gJugador2);
+    Menu03_3();
+
+}
+
+void Menu03_3() {
+    int TJ2 = VerificarNumero();
+    Tanque *TanqueJ2 = nullptr;
+    switch (TJ2) {
+        case 1:
+            TanqueJ2 = new Tanque("T-28 Super Tank",100,30);
+            gJugador2->SetTanque(TanqueJ2);
+            break;
+        case 2:
+            TanqueJ2 = new Tanque("T-14 Armata",100,60);
+            gJugador2->SetTanque(TanqueJ2);
+            break;
+        case 3:
+            TanqueJ2 = new Tanque("Leopardo II",150,15);
+            gJugador2->SetTanque(TanqueJ2);
+            break;
+        case 4:
+            TanqueJ2 = new Tanque("Black Night",100,25);
+            gJugador2->SetTanque(TanqueJ2);
+            break;
+        default:
+            gImpresion->ImpresionError01();
+            Menu03_3();
+    }
+    system("pause");
+    //saltar al siguiente metodo de inicio de partida
+    //gJugador1 variable del j1
+    //gJugador2 variable del j2
 }
 
 

@@ -40,7 +40,6 @@ class Impresion {
     void ImpresionPantalla1() {
         system("cls");
         char MsgBienvenida[] = "[BIENVENIDOS A FIRE TANKS]";
-        CentrarCursor(MsgBienvenida);
 		Sleep(10);
 		for (int i=0;i<24;i++) cout<<"\n";
 		int msg=strlen(MsgBienvenida);
