@@ -22,9 +22,11 @@ class Jugador {
     string aNombre;
     Tanque *aTanque;
     int aTurnos;
+    int aEspecial;
     public:
     Jugador() {
         aTurnos = 0;
+        aEspecial = 0;
     }
 
     void SetTanque(Tanque *tanque) {
@@ -46,6 +48,14 @@ class Jugador {
     }
     string GetNombre() {
         return aNombre;
+    }
+
+    int GetEspecial() {
+        return aEspecial;
+    }
+
+    void SetEspecial(int n) {
+        aEspecial = n;
     }
 
 };

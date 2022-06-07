@@ -8,21 +8,24 @@ class Tanque {
     private:
         string aNombre;
         int aVida;
-        int aDaño;
+        int aDano;
         int aPosicion;
+        int aEspecial;
     public:
-        Tanque (string nombre,int vida, int daño) {
+        Tanque (string nombre,int vida, int dano) {
             aNombre = nombre;
             aVida = vida;
-            aDaño = daño;
+            aDano = dano;
+            aPosicion = 0;
+            aEspecial = 0;
         }
 
         void SetVida(int vida) {
             aVida = vida;
         }
 
-        void SetDaño(int daño) {
-            aDaño = daño;
+        void SetDano(int dano) {
+            aDano = dano;
         }
 
         void SetPosicion(int posicion) {
@@ -37,12 +40,19 @@ class Tanque {
             return aVida;
         }
 
-        int GetDaño() {
-            return aDaño;
+        int GetDano() {
+            return aDano;
         }
 
         int GetPosicion() {
             return aPosicion;
+        }
+        int GetEspecial() {
+            return aEspecial;
+        }
+
+        void SetEspecial(int n) {
+            aEspecial = n;
         }
     
 };
